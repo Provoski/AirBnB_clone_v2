@@ -11,7 +11,7 @@ def do_pack():
     if not os.path.isdir("versions"):
         os.mkdir("versions")
     d_time = datetime.now()
-    output = "versions/web_static_{}{:02d}{:02d}{:02d}{:02d}{:02d}.tgz".format(
+    path = "versions/web_static_{}{:02d}{:02d}{:02d}{:02d}{:02d}.tgz".format(
         d_time.year,
         d_time.month,
         d_time.day,
@@ -20,10 +20,10 @@ def do_pack():
         d_time.second
     )
     try:
-        print("Packing web_static to {}".format(output))
-        local("tar -cvzf {} web_static".format(output))
-        size = os.stat(output).st_size
-        print("web_static packed: {} -> {} Bytes".format(output, size))
+        print("Packing web_static to {}".format(path))
+        local("tar -cvzf {} web_static".format(path))
+        size = os.stat(path).st_size
+        print("web_static packed: {} -> {} Bytes".format(path, size))
     except Exception:
         output = None
     return output
