@@ -11,7 +11,7 @@ def do_pack():
     if not os.path.isdir("versions"):
         os.mkdir("versions")
     d_time = datetime.now()
-    output = "versions/web_static_{}{:02d}{:02d}{:02d}{:02d}{:02}.tgz".format(
+    output = "versions/web_static_{}{:02d}{:02d}{:02d}{:02d}{:02d}.tgz".format(
         d_time.year,
         d_time.month,
         d_time.day,
@@ -26,4 +26,4 @@ def do_pack():
         print("web_static packed: {} -> {} Bytes".format(output, size))
     except Exception:
         output = None
-    return none
+    return output
