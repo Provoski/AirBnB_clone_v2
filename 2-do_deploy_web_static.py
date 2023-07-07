@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Fabscript for deployment
+"""
 from datetime import datetime
 from fabric.api import *
 from os import path
